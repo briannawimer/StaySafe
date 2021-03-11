@@ -2,9 +2,9 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 import Header from "./components/Header";
-import HomeScreen from "./screens/HomeScreen";
-import CovidQuestionnaire from "./screens/CovidQuestionnaireScreen";
-import LoginScreen from "./screens/LoginScreen";
+import HomeScreen from "./screens/home/HomeScreen";
+import CovidQuestionnaire from "./screens/covid/CovidQuestionnaireScreen";
+import LoginScreen from "./screens/account/LoginScreen";
 
 export default function App() {
   return (
