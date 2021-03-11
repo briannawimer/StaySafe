@@ -3,8 +3,8 @@ import { StyleSheet, Text, View } from "react-native";
 
 import Header from "./components/Header";
 import HomeScreen from "./screens/home/HomeScreen";
-import CovidQuestionnaire from "./screens/covid/CovidQuestionnaireScreen";
-import LoginScreen from "./screens/account/LoginScreen";
+import CovidQuestionnaire from "./screens/CovidQuestionnaireScreen";
+import LoginScreen from "./screens/LoginScreen";
 
 export default function App() {
   return (
