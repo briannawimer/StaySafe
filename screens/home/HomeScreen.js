@@ -1,14 +1,19 @@
 import React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 
-import Card from "../components/Card";
+import Card from '../../components/Card';
+// import CovidScreen from "./CovidScreen";
 
 const HomeScreen = (props) => {
   return (
     <View style={styles.screen}>
       <Card style={styles.buttonContainer}>
         <View style={styles.buttonText}>
-          <Button title="Covid-19 Information" color="black" />
+          <Button
+            title="Covid-19 Information"
+            color="black"
+            onPress={() => props.navigation.navigate('CovidScreen')}
+          />
         </View>
       </Card>
       <Card style={styles.buttonContainer}>
