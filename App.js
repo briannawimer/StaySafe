@@ -10,7 +10,7 @@ export default function App() {
   return (
     <View style={styles.screen}>
       <Header title="Stay Safe Covid-19" />
-      <HomeScreen />
+      <LoginScreen />
     </View>
   );
 }
