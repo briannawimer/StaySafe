@@ -9,12 +9,29 @@ const HomeScreen = (props) => {
     <View style={styles.screen}>
       <Card style={styles.buttonContainer}>
         <View style={styles.buttonText}>
-          <Button title="Covid-19 Information" color="black" />
+          <Button
+            title="Covid-19 Information"
+            color="black"
+            onPress={() => {
+              props.navigation.navigate({ routeName: "CovidInfo" });
+            }}
+          />
         </View>
       </Card>
       <Card style={styles.buttonContainer}>
         <View>
           <Button title="Vaccine Information" color="black" />
+        </View>
+      </Card>
+      <Card style={styles.buttonContainer}>
+        <View style={styles.buttonText}>
+          <Button
+            title="Login Screen"
+            color="black"
+            onPress={() => {
+              props.navigation.navigate({ routeName: "Login" });
+            }}
+          />
         </View>
       </Card>
     </View>

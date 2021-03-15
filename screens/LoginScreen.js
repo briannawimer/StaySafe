@@ -36,11 +36,19 @@ const LoginScreen = (props) => {
         />
       </View>
       <View style={styles.bottom}>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            props.navigation.navigate({ routeName: "ForgotPassword" });
+          }}
+        >
           <Text style={styles.forgotBtn}>Forgot Password?</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            props.navigation.navigate({ routeName: "CreateAccount" });
+          }}
+        >
           <Text style={styles.forgotBtn}>Signup</Text>
         </TouchableOpacity>
       </View>
@@ -56,7 +64,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#deb887",
+    backgroundColor: "linen",
   },
   bottom: {
     flexDirection: "row",
@@ -77,7 +85,7 @@ const styles = StyleSheet.create({
     height: 30,
     margin: 10,
     borderRadius: 15,
-    color: "white",
+    color: "midnightblue",
   },
   loginText: {
     height: 50,
