@@ -20,7 +20,11 @@ const HomeScreen = (props) => {
       </Card>
       <Card style={styles.buttonContainer}>
         <View>
-          <Button title="Vaccine Information" color="black" />
+          <Button title="Vaccine Information" color="black" 
+          onPress={()=>{
+            props.navigation.navigate({ routeName: "VaccineInfo" });
+          }}
+          />
         </View>
       </Card>
       <Card style={styles.buttonContainer}>

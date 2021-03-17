@@ -12,6 +12,9 @@ import CovidDescriptionScreen from "../screens/CovidDescriptionScreen";
 import VaccineQuestionnaireScreen from "../screens/VaccineQuestionaireScreen";
 import VaccineSchedulerScreen from "../screens/VaccineSchedulerScreen";
 import VaccineAdviceScreen from "../screens/VaccineAdviceScree";
+import VaccineInfoScreen from "../screens/VaccineInfoScreen";
+import VaccineDescriptionScreen from "../screens/VaccineDescriptionScreen";
+import VaccineDistributionMap from "../screens/VaccineDistributionMap";
 
 const CovidNavigator = createStackNavigator({
   Home: {
@@ -61,7 +64,13 @@ const CovidNavigator = createStackNavigator({
       headerTintColor: "maroon",
     },
   },
-
+  VaccineInfo: {
+    screen: VaccineInfoScreen,
+    navigationOptions: {
+      headerTitle: "Vaccine Info",
+      headerTintColor: "maroon",
+    },
+  },
   VaccineQuestionnaire: {
     screen: VaccineQuestionnaireScreen,
     navigationOptions: {
@@ -83,6 +92,20 @@ const CovidNavigator = createStackNavigator({
       headerTintColor: "maroon",
     },
   },
+  VaccineDescription:{
+    screen: VaccineDescriptionScreen,
+    navigationOptions: {
+      headerTitle: "Vaccine Description Screen",
+      headerTintColor: "maroon",
+    },
+  },
+  VaccineDistributionMap:{
+    screen: VaccineDistributionMap,
+    navigationOptions: {
+      headerTitle: "Vaccine Distribution Map",
+      headerTintColor: "maroon",
+    },
+  }
 });
 
 export default createAppContainer(CovidNavigator);

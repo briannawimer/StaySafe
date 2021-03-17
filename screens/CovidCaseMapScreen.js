@@ -1,25 +1,9 @@
-import React from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Button,
-  Flatlist,
-  StyleSheet,
-} from "react-native";
+import * as React from 'react';
+import Map from '../components/Map';
 
 const CovidCaseMapScreen = (props) => {
-  return (
-    <View>
-      <Text>Covid Case Map Screen</Text>
-    </View>
-  );
-};
 
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-  },
-});
+    return <Map uri={'https://alpublichealth.maps.arcgis.com/apps/MapSeries/index.html?appid=d84846411471404c83313bfe7ab2a367'} />
+}
 
 export default CovidCaseMapScreen;
