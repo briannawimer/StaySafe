@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { Button, Text, View } from 'react-native';
-import * as Linking from 'expo-linking';
+import { StyleSheet, Button, Text, View } from 'react-native';
 
 const VaccineInfoScreen = (props) => {
 
@@ -16,8 +15,7 @@ const VaccineInfoScreen = (props) => {
                 <Button
                     title="Vaccine Distribution Map"
                     onPress={() => {
-                        Linking.openURL('https://alpublichealth.maps.arcgis.com/apps/MapSeries/index.html?appid=d84846411471404c83313bfe7ab2a367')
-                        // props.navigation.navigate({ routeName: "VaccineDistributionMap" });
+                        props.navigation.navigate({ routeName: "VaccineDistributionMap" });
                     }}
                 />
                 <Button
