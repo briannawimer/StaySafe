@@ -12,7 +12,10 @@ const CovidInfoScreen = (props) => {
   return (
     <View>
       <View>
-        <Text>Covid Info Screen</Text>
+       
+      <Text style={styles.covid}>
+	
+	        COVID INFO</Text>
       </View>
       <View>
         <Button
@@ -39,9 +42,41 @@ const CovidInfoScreen = (props) => {
 };
 
 const styles = StyleSheet.create({
-  screen: {
+  container: {
     flex: 1,
+    backgroundColor: '#FFFFFF',
+    alignItems: 'center',
+    justifyContent: 'space-evenly'
   },
+
+ covid: {
+    color: '#32425F',
+    fontSize: 40,
+    alignSelf: 'center',
+    marginHorizontal: 30,
+    marginVertical: 30,  
+    
+   
+  },
+   info: {
+    color: '#32425F',
+    fontSize: 40,
+    alignSelf: 'flex-start',
+    marginHorizontal: 30,
+    marginVertical: -100,
+    
+  },
+
+  button: {
+    backgroundColor: '#EDFAFF',
+    padding: 20,
+    borderRadius: 5,
+  },
+
+  buttonText: {
+    fontSize: 20,
+    color: '#000000',
+  }, 
 });
 
 export default CovidInfoScreen;
