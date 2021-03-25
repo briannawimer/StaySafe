@@ -8,75 +8,44 @@ import {
   StyleSheet,
 } from "react-native";
 
-const CovidInfoScreen = (props) => {
-  return (
-    <View>
-      <View>
-       
-      <Text style={styles.covid}>
-	
-	        COVID INFO</Text>
-      </View>
-      <View>
-        <Button
-          title="Covid Questionnaire"
-          onPress={() => {
-            props.navigation.navigate({ routeName: "CovidQuestionnaire" });
-          }}
-        />
-        <Button
-          title="Covid Map"
-          onPress={() => {
-            props.navigation.navigate({ routeName: "CovidCaseMap" });
-          }}
-        />
-        <Button
-          title="Covid Description"
-          onPress={() => {
-            props.navigation.navigate({ routeName: "CovidDescription" });
-          }}
-        />
-      </View>
-    </View>
-  );
-};
 
+    const CovidInfoScreen = (props) => {
+   return (
+     <View>
+       <Text>Covid Info Screen </Text>
+       <View>
+         <Text>Covid Info Screen</Text>
+       </View>
+       <View>
+         <Button
+           title="Covid Questionnaire"
+           onPress={() => {
+             props.navigation.navigate({ routeName: "CovidQuestionnaire" });
+           }}
+         />
+         <Button
+           title="Covid Map"
+           onPress={() => {
+             props.navigation.navigate({ routeName: "CovidCaseMap" });
+           }}
+         />
+         <Button
+           title="Covid Description"
+           onPress={() => {
+             props.navigation.navigate({ routeName: "CovidDescription" });
+           }}
+         />
+       </View>
+     </View>
+   );
+ };
 const styles = StyleSheet.create({
-  container: {
+  screen: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
-    alignItems: 'center',
-    justifyContent: 'space-evenly'
   },
-
- covid: {
-    color: '#32425F',
-    fontSize: 40,
-    alignSelf: 'center',
-    marginHorizontal: 30,
-    marginVertical: 200,  
-    
-   
-  },
-   info: {
-    color: '#32425F',
-    fontSize: 40,
-    alignSelf: 'flex-start',
-    marginHorizontal: 30,
-    marginVertical: -100,
-    
-  },
-
-  button: {
-    backgroundColor: '#EDFAFF',
-    padding: 20,
-    borderRadius: 5,
-  },
-
-  buttonText: {
-    fontSize: 20,
-    color: '#000000',
-  }, 
 });
 
+
 export default CovidInfoScreen;
+
+
