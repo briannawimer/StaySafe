@@ -48,7 +48,7 @@ const VaccineSchedulerScreen = (props) => {
 </SafeAreaView>
   );
 };
-
+export default VaccineSchedulerScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -68,4 +68,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default VaccineSchedulerScreen;
+//export default VaccineSchedulerScreen;
