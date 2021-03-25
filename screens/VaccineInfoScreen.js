@@ -5,6 +5,10 @@ const VaccineInfoScreen = (props) => {
 
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <Text style={styles.covid}>
+	
+	            VACCINE INFO</Text>
+
             <View>
                 <Button
                     title="Vaccine Questionnaire"
@@ -28,5 +32,23 @@ const VaccineInfoScreen = (props) => {
         </View>
     );
 }
+    const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+    alignItems: 'center',
+    justifyContent: 'space-evenly'
+  },
+
+ covid: {
+    color: '#32425F',
+    fontSize: 40,
+    alignSelf: 'center',
+    marginHorizontal: 30,
+    marginVertical: 30,  
+    
+   
+  },
+});
 
 export default VaccineInfoScreen
