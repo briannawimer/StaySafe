@@ -1,5 +1,5 @@
 # StaySafe
-# StaySafe
+# test cases
 test case 1(create account screen):
   In the create account screen, we create 5 blank allow user to enter Name, Email, Password, Age as well as gender. When user fill in all the information, the data will store in the database for the login function to work. If user forget to enter the information, for example, they didn't enter Email then press regist, the system will show warning says'Please fill in Email.'
   
