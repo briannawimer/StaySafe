@@ -1,27 +1,24 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import * as React from "react";
+import { Header, Icon } from "react-native-elements";
 
-const Header = (props) => {
+export default () => {
   return (
-    <View style={styles.header}>
-      <Text style={styles.headerTitle}> {props.title}</Text>
-    </View>
+    <Header
+      backgroundImageStyle={{}}
+      barStyle="default"
+      centerComponent={{
+        text: "MY TITLE",
+        style: { color: "#fff" },
+      }}
+      centerContainerStyle={{}}
+      containerStyle={{ width: 350 }}
+      leftComponent={{ icon: "menu", color: "#fff" }}
+      leftContainerStyle={{}}
+      linearGradientProps={{}}
+      placement="center"
+      rightComponent={{ icon: "home", color: "#fff" }}
+      rightContainerStyle={{}}
+      statusBarProps={{}}
+    />
   );
 };
-
-const styles = StyleSheet.create({
-  header: {
-    width: "100%",
-    height: 125,
-    paddingTop: 36,
-    backgroundColor: "blue",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  headerTitle: {
-    color: "white",
-    fontSize: 26,
-  },
-});
-
-export default Header;

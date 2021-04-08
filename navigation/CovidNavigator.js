@@ -1,5 +1,8 @@
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
+import { Button } from "react-native";
+import React from "react";
+import Avatar from "../components/Avatar";
 
 import HomeScreen from "../screens/HomeScreen";
 import LoginScreen from "../screens/LoginScreen";
@@ -19,17 +22,26 @@ import VaccineDistributionMap from "../screens/VaccineDistributionMap";
 const CovidNavigator = createStackNavigator({
   Home: {
     screen: HomeScreen,
-    navigationOptions: { headerTitle: "Home", headerTintColor: "maroon" },
+    navigationOptions: {
+      headerTitle: "Home",
+      headerTintColor: "maroon",
+      headerRight: () => <Avatar></Avatar>,
+    },
   },
   Login: {
     screen: LoginScreen,
-    navigationOptions: { headerTitle: "Login", headerTintColor: "maroon" },
+    navigationOptions: {
+      headerTitle: "Login",
+      headerTintColor: "maroon",
+      headerRight: () => <Avatar></Avatar>,
+    },
   },
   CreateAccount: {
     screen: CreateAccountScreen,
     navigationOptions: {
       headerTitle: "Create Account",
       headerTintColor: "maroon",
+      headerRight: () => <Avatar></Avatar>,
     },
   },
   ForgotPassword: {
@@ -37,17 +49,23 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Forgot Password",
       headerTintColor: "maroon",
+      headerRight: () => <Avatar></Avatar>,
     },
   },
   CovidInfo: {
     screen: CovidInfoScreen,
-    navigationOptions: { headerTitle: "Covid Info", headerTintColor: "maroon" },
+    navigationOptions: {
+      headerTitle: "Covid Info",
+      headerTintColor: "maroon",
+      headerRight: () => <Avatar></Avatar>,
+    },
   },
   CovidQuestionnaire: {
     screen: CovidQuestionnaireScreen,
     navigationOptions: {
       headerTitle: "Covid Questionnaire",
       headerTintColor: "maroon",
+      headerRight: () => <Avatar></Avatar>,
     },
   },
   CovidCaseMap: {
@@ -55,6 +73,7 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Covid Case Map",
       headerTintColor: "maroon",
+      headerRight: () => <Avatar></Avatar>,
     },
   },
   CovidDescription: {
@@ -62,6 +81,7 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Covid Description",
       headerTintColor: "maroon",
+      headerRight: () => <Avatar></Avatar>,
     },
   },
   VaccineInfo: {
@@ -69,6 +89,7 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Vaccine Info",
       headerTintColor: "maroon",
+      headerRight: () => <Avatar></Avatar>,
     },
   },
   VaccineQuestionnaire: {
@@ -76,6 +97,7 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Vaccine Questionnaire",
       headerTintColor: "maroon",
+      headerRight: () => <Avatar></Avatar>,
     },
   },
   VaccineScheduler: {
@@ -83,6 +105,7 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Vaccine SCheduler",
       headerTintColor: "maroon",
+      headerRight: () => <Avatar></Avatar>,
     },
   },
   VaccineAdvice: {
@@ -90,22 +113,25 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Vaccine Advice Screen",
       headerTintColor: "maroon",
+      headerRight: () => <Avatar></Avatar>,
     },
   },
-  VaccineDescription:{
+  VaccineDescription: {
     screen: VaccineDescriptionScreen,
     navigationOptions: {
       headerTitle: "Vaccine Description Screen",
       headerTintColor: "maroon",
+      headerRight: () => <Avatar></Avatar>,
     },
   },
-  VaccineDistributionMap:{
+  VaccineDistributionMap: {
     screen: VaccineDistributionMap,
     navigationOptions: {
       headerTitle: "Vaccine Distribution Map",
       headerTintColor: "maroon",
+      headerRight: () => <Avatar></Avatar>,
     },
-  }
+  },
 });
 
 export default createAppContainer(CovidNavigator);

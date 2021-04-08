@@ -10,16 +10,15 @@ import {
 import { SYMPTOMS } from "../data/questionnaire-data";
 import Card from "../components/Card";
 import Header from "../components/Header";
+import CheckBox from "../components/CheckBox";
 
 const CovidQuestionnaireScreen = (props) => {
   const renderGridItem = (itemData) => {
     return (
       <TouchableOpacity style={styles.gridItem}>
-        <Card>
-          <View>
-            <Text>{itemData.item.title}</Text>
-          </View>
-        </Card>
+        <CheckBox>
+          <Text>{itemData.item.title}</Text>
+        </CheckBox>
       </TouchableOpacity>
     );
   };
@@ -31,7 +30,7 @@ const CovidQuestionnaireScreen = (props) => {
           data={SYMPTOMS}
           renderItem={renderGridItem}
           keyExtractor={(item) => item.id}
-          numColumns={2}
+          numColumns={1}
         />
       </View>
       <View style={styles.screen}>
@@ -46,10 +45,6 @@ const CovidQuestionnaireScreen = (props) => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    marginTop: 10,
-    padding: 50,
-    justifyContent: "center",
-    alignItems: "center",
   },
   instructions: {
     justifyContent: "center",
@@ -59,8 +54,10 @@ const styles = StyleSheet.create({
   },
   gridItem: {
     flex: 1,
-    margin: 5,
+    margin: 0,
     height: 65,
+    width: "95%",
+    borderRadius: 10,
   },
   submitBtn: {
     width: "30%",

@@ -9,15 +9,15 @@ import {
 } from "react-native";
 import Card from "../components/Card";
 import { CATEGORIES } from "../data/questionnaire-data";
+import CheckBox from "../components/CheckBox";
+
 const VaccineQuestionnaireScreen = (props) => {
   const renderGridItem = (itemData) => {
     return (
       <TouchableOpacity style={styles.gridItem}>
-        <Card>
-          <View>
-            <Text>{itemData.item.title}</Text>
-          </View>
-        </Card>
+        <CheckBox>
+          <Text>{itemData.item.title}</Text>
+        </CheckBox>
       </TouchableOpacity>
     );
   };
@@ -31,7 +31,7 @@ const VaccineQuestionnaireScreen = (props) => {
           data={CATEGORIES}
           renderItem={renderGridItem}
           keyExtractor={(item) => item.id}
-          numColumns={2}
+          numColumns={1}
         />
       </View>
       <View style={styles.screen}>
@@ -59,8 +59,10 @@ const styles = StyleSheet.create({
   },
   gridItem: {
     flex: 1,
-    margin: 5,
+    margin: 0,
     height: 65,
+    width: "95%",
+    borderRadius: 10,
   },
   submitBtn: {
     width: "30%",
