@@ -3,16 +3,37 @@ import {
   View,
   Text,
   TextInput,
-  Button,
+  Alert,
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
 
 import Card from "../components/Card";
+import { userLogin } from '../firebase_config'
 
 const LoginScreen = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const loginWithFireabse = () => {
+    console.log('login...');
+    const user = {
+      email: email,
+      password: password
+    }
+    userLogin(user).then((res) => {
+      Alert.alert(
+        "Alert",
+        "Login successfuly!",
+        [
+          { text: "OK", onPress: () => props.navigation.pop() }
+        ]
+      );
+      
+    }).catch((err) => {
+      console.log(err);
+    })
+  }
 
   return (
     <View style={styles.screen}>
@@ -52,7 +73,7 @@ const LoginScreen = (props) => {
           <Text style={styles.forgotBtn}>Signup</Text>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.loginBtn}>
+      <TouchableOpacity style={styles.loginBtn} onPress={loginWithFireabse}>
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
     </View>

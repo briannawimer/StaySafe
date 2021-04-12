@@ -7,8 +7,10 @@ import {
   StyleSheet,
   ScrollView,
   Keyboard,
+  Alert,
   KeyboardAvoidingView,
 } from "react-native";
+import { userRegister } from '../firebase_config'
 
 const CreateAccountScreen = (props) => {
   const [userName, setUserName] = useState("");
@@ -52,43 +54,56 @@ const CreateAccountScreen = (props) => {
       name: userName,
       email: userEmail,
       age: userAge,
-      address: userAddress,
+      gender: userAddress,
       password: userPassword,
     };
-    var formBody = [];
-    for (var key in dataToSend) {
-      var encodedKey = encodeURIComponent(key);
-      var encodedValue = encodeURIComponent(dataToSend[key]);
-      formBody.push(encodedKey + "=" + encodedValue);
-    }
-    formBody = formBody.join("&");
-
-    fetch("http://localhost:3000/api/user/register", {
-      method: "POST",
-      body: formBody,
-      headers: {
-        //Header Defination
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-      },
+    userRegister(dataToSend)
+    .then((res)=>{
+      Alert.alert(
+        "Alert",
+        "Register successfuly!",
+        [
+          { text: "OK", onPress: () => props.navigation.pop() }
+        ]
+      );
+    }).catch((err)=>{
+      alert("register failed");
     })
-      .then((response) => response.json())
-      .then((responseJson) => {
-        //Hide Loader
 
-        console.log(responseJson);
-        // If server response message same as Data Matched
-        if (responseJson.status === "success") {
-          setIsRegistraionSuccess(true);
-          console.log("Registration Successful. Please Login to proceed");
-        } else {
-          setErrortext(responseJson.msg);
-        }
-      })
-      .catch((error) => {
-        //Hide Loader
-        setLoading(false);
-        console.error(error);
-      });
+    // var formBody = [];
+    // for (var key in dataToSend) {
+    //   var encodedKey = encodeURIComponent(key);
+    //   var encodedValue = encodeURIComponent(dataToSend[key]);
+    //   formBody.push(encodedKey + "=" + encodedValue);
+    // }
+    // formBody = formBody.join("&");
+
+    // fetch("http://localhost:3000/api/user/register", {
+    //   method: "POST",
+    //   body: formBody,
+    //   headers: {
+    //     //Header Defination
+    //     "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+    //   },
+    // })
+    //   .then((response) => response.json())
+    //   .then((responseJson) => {
+    //     //Hide Loader
+
+    //     console.log(responseJson);
+    //     // If server response message same as Data Matched
+    //     if (responseJson.status === "success") {
+    //       setIsRegistraionSuccess(true);
+    //       console.log("Registration Successful. Please Login to proceed");
+    //     } else {
+    //       setErrortext(responseJson.msg);
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     //Hide Loader
+    //     setLoading(false);
+    //     console.error(error);
+    //   });
   };
   if (isRegistraionSuccess) {
     return (
