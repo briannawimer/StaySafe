@@ -7,37 +7,53 @@ import Card from "../components/Card";
 const HomeScreen = (props) => {
   return (
     <View style={styles.screen}>
-      <Card style={styles.buttonContainer}>
-        <View style={styles.buttonText}>
+      <View style={styles.button}>
+        <Card
+          style={{
+            height: "60%",
+            paddingVertical: 170,
+            backgroundColor: "deeppink",
+          }}
+        >
           <Button
+            style={{ textAlign: "center" }}
             title="Covid-19 Information"
-            color="black"
+            color="white"
             onPress={() => {
               props.navigation.navigate({ routeName: "CovidInfo" });
             }}
           />
-        </View>
-      </Card>
-      <Card style={styles.buttonContainer}>
-        <View>
-          <Button title="Vaccine Information" color="black" 
-          onPress={()=>{
-            props.navigation.navigate({ routeName: "VaccineInfo" });
+        </Card>
+      </View>
+      <View style={styles.button}>
+        <Card
+          style={{
+            height: "60%",
+            paddingVertical: 170,
+            backgroundColor: "deepskyblue",
           }}
+        >
+          <Button
+            title="Vaccine Information"
+            color="white"
+            onPress={() => {
+              props.navigation.navigate({ routeName: "VaccineInfo" });
+            }}
           />
-        </View>
-      </Card>
-      <Card style={styles.buttonContainer}>
-        <View style={styles.buttonText}>
+        </Card>
+      </View>
+
+      <View style={(styles.button, { alignSelf: "stretch" })}>
+        <Card style={{ alignContent: "stretch", backgroundColor: "maroon" }}>
           <Button
             title="Login Screen"
-            color="black"
+            color="white"
             onPress={() => {
               props.navigation.navigate({ routeName: "Login" });
             }}
           />
-        </View>
-      </Card>
+        </Card>
+      </View>
     </View>
   );
 };
@@ -45,14 +61,33 @@ const HomeScreen = (props) => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignContent: "center",
+    backgroundColor: "darkblue",
   },
   buttonContainer: {
     flexDirection: "row",
     margin: 12,
-    padding: 10,
-    justifyContent: "center",
     textAlign: "center",
-    paddingHorizontal: 100,
+  },
+  loginContainer: {
+    flexDirection: "row",
+    margin: 12,
+    justifyContent: "space-around",
+    textAlign: "center",
+    alignSelf: "stretch",
+  },
+  button: {
+    paddingHorizontal: 8,
+    paddingVertical: 6,
+    borderRadius: 4,
+    alignSelf: "flex-start",
+    marginHorizontal: "1%",
+    marginBottom: 6,
+    width: "48%",
+    textAlign: "center",
   },
   buttonText: {
     width: "100%",
