@@ -4,12 +4,13 @@ import {
   Text,
   TouchableOpacity,
   StyleSheet,
-  Button,
+  Image,
   Modal,
 } from "react-native";
 
 const VaccineDescriptionScreen = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [modalChild, setModalChild] = useState(null);
 
   return (
     <View style={styles.screen}>
@@ -21,42 +22,57 @@ const VaccineDescriptionScreen = (props) => {
           Alert.alert("Modal has now been closed.");
         }}
       >
-        <Text style={styles.text}>Vaccine Information</Text>
-          <Text>Pfizer, Inc. and BioNTech
-          Name: BNT162b2</Text>
-                    
-                    <Text> Manufacturer: Pfizer, Inc., and BioNTech</Text>
-
-                     <Text>Type of Vaccine: mRNA</Text>
-
-                     <Text>Number of Shots: 2 shots, 21 days apart</Text>
-
-                     <Text>Who Should Get Vaccinated</Text>
-
-                     <Text>The Pfizer-BioNTech vaccine is recommended for people aged 16 years and older.</Text>
-                     <Text>Who Should NOT Get Vaccinated/n</Text>
-                     <Text>If you have had a severe allergic reaction (anaphylaxis) or an immediate allergic reaction, even if it was not severe:
-                     to any ingredient in an mRNA COVID-19 vaccine (such as polyethylene glycol), you should not get an mRNA COVID-19 vaccine.*
-                     or after getting the first dose of the vaccine.</Text>
-        <Text
-          style={styles.closeText}
-          onPress={() => {
-            setModalVisible(!modalVisible);
-          }}
-        >
-          Close Modal
+        <View>
+          {
+            modalChild
+          }
+          <Text
+            style={styles.closeText}
+            onPress={() => {
+              setModalVisible(false);
+            }}
+          >
+            Close Modal
         </Text>
+        </View>
       </Modal>
 
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
           setModalVisible(!modalVisible);
+          setModalChild(
+            <View>
+              <Text style={styles.text}>Vaccine Information</Text>
+              <Text>Pfizer, Inc. and BioNTech
+          Name: BNT162b2</Text>
+
+              <Text> Manufacturer: Pfizer, Inc., and BioNTech</Text>
+
+              <Text>Type of Vaccine: mRNA</Text>
+
+              <Text>Number of Shots: 2 shots, 21 days apart</Text>
+
+              <Text>Who Should Get Vaccinated</Text>
+
+              <Text>The Pfizer-BioNTech vaccine is recommended for people aged 16 years and older.</Text>
+              <Text>Who Should NOT Get Vaccinated/n</Text>
+              <Text>If you have had a severe allergic reaction (anaphylaxis) or an immediate allergic reaction, even if it was not severe:
+              to any ingredient in an mRNA COVID-19 vaccine (such as polyethylene glycol), you should not get an mRNA COVID-19 vaccine.*
+                     or after getting the first dose of the vaccine.</Text>
+              <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                <Image
+                  style={{ width: 150, height: 150 }}
+                  source={require('../assets/vaccine_information.png')}
+                />
+              </View>
+            </View>
+          )
         }}
       >
         <Text style={styles.buttonText}>Pfizer, Inc. and BioNTech</Text>
       </TouchableOpacity>
-      <Modal
+      {/* <Modal
         animationType={"slide"}
         transparent={false}
         visible={modalVisible}
@@ -64,42 +80,45 @@ const VaccineDescriptionScreen = (props) => {
           Alert.alert("Modal has now been closed.");
         }}
       >
-        <Text style={styles.text}>Vaccine Information</Text>
-          <Text>Name: mRNA-1273</Text>
-          
-          <Text> Manufacturer: ModernaTX, Inc</Text>
+        
+      </Modal> */}
 
-           <Text>Type of Vaccine: mRNA</Text>
-
-           <Text>Number of Shots: 2 shots, 28 days apart</Text>
-
-           <Text>Who Should Get Vaccinated</Text>
-
-           <Text>The Pfizer-BioNTech vaccine is recommended for people aged 18 years and older.</Text>
-           <Text>Who Should NOT Get Vaccinated/n</Text>
-           <Text>if you have had a severe allergic reaction (anaphylaxis) or an immediate allergic reaction, even if it was not severe:</Text>
-<Text>  -to any ingredient in an mRNA COVID-19 vaccine (such as polyethylene glycol), you should not get an mRNA COVID-19 vaccine.*</Text>
-<Text>  -or after getting the first dose of the vaccine, you should not get a second dose of either of the mRNA COVID-19 vaccines.
-</Text>
-        <Text
-          style={styles.closeText}
-          onPress={() => {
-            setModalVisible(!modalVisible);
-          }}
-        >
-          Close Modal
-        </Text>
-      </Modal>
-
-      <TouchableOpacity
+      < TouchableOpacity
         style={styles.button}
         onPress={() => {
           setModalVisible(!modalVisible);
+          setModalChild(
+            <View>
+              <Text style={styles.text}>Vaccine Information</Text>
+              <Text>Name: mRNA-1273</Text>
+
+              <Text> Manufacturer: ModernaTX, Inc</Text>
+
+              <Text>Type of Vaccine: mRNA</Text>
+
+              <Text>Number of Shots: 2 shots, 28 days apart</Text>
+
+              <Text>Who Should Get Vaccinated</Text>
+
+              <Text>The Pfizer-BioNTech vaccine is recommended for people aged 18 years and older.</Text>
+              <Text>Who Should NOT Get Vaccinated/n</Text>
+              <Text>if you have had a severe allergic reaction (anaphylaxis) or an immediate allergic reaction, even if it was not severe:</Text>
+              <Text>  -to any ingredient in an mRNA COVID-19 vaccine (such as polyethylene glycol), you should not get an mRNA COVID-19 vaccine.*</Text>
+              <Text>  -or after getting the first dose of the vaccine, you should not get a second dose of either of the mRNA COVID-19 vaccines.
+</Text>
+              <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                <Image
+                  style={{ width: 150, height: 150 }}
+                  source={require('../assets/vaccine_information.png')}
+                />
+              </View>
+            </View>
+          )
         }}
       >
         <Text style={styles.buttonText}>ModernaTX, Inc.</Text>
       </TouchableOpacity>
-      <Modal
+      {/* <Modal
         animationType={"slide"}
         transparent={false}
         visible={modalVisible}
@@ -107,49 +126,52 @@ const VaccineDescriptionScreen = (props) => {
           Alert.alert("Modal has now been closed.");
         }}
       >
-        <Text style={styles.text}>Vaccine Information</Text>
-          <Text>Name:AZD1222</Text>
-                    
-                    <Text> Manufacturer:
-          Oxford–AstraZeneca
-          </Text>
-
-                     <Text>Type of Vaccine: viral vector</Text>
-
-                     <Text>Number of Shots: 1 shots</Text>
-
-                     <Text>Who Should Get Vaccinated</Text>
-
-                     <Text>
-          The J&J/Janssen vaccine is recommended for people aged 18 years and older.
-          </Text>
-                     <Text>Who Should NOT Get Vaccinated</Text>
-                     <Text>
-          If you have had a severe allergic reaction (anaphylaxis) or an immediate allergic reaction—even if it was not severe—to any ingredientexternal icon in the J&J/Janssen COVID-19 vaccine (such as polysorbate), you should not get the  COVID-19 vaccine.
-          </Text>
-          <Text>  -An allergic reaction is considered severe when a person needs to be treated with epinephrine or EpiPen© or if they must go to the hospital. Experts refer to severe allergic reactions as anaphylaxis.</Text>
-          <Text>
-          An immediate allergic reaction means a reaction within 4 hours of getting vaccinated, including symptoms such as hives, swelling, or wheezing (respiratory distress).
-          </Text>
-        <Text
-          style={styles.closeText}
-          onPress={() => {
-            setModalVisible(!modalVisible);
-          }}
-        >
-          Close Modal
-        </Text>
-      </Modal>
+        
+      </Modal> */}
 
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
           setModalVisible(!modalVisible);
+          setModalChild(
+            <View>
+              <Text style={styles.text}>Vaccine Information</Text>
+              <Text>Name:AZD1222</Text>
+
+              <Text> Manufacturer:
+              Oxford–AstraZeneca
+          </Text>
+
+              <Text>Type of Vaccine: viral vector</Text>
+
+              <Text>Number of Shots: 1 shots</Text>
+
+              <Text>Who Should Get Vaccinated</Text>
+
+              <Text>
+                The J&J/Janssen vaccine is recommended for people aged 18 years and older.
+          </Text>
+              <Text>Who Should NOT Get Vaccinated</Text>
+              <Text>
+                If you have had a severe allergic reaction (anaphylaxis) or an immediate allergic reaction—even if it was not severe—to any ingredientexternal icon in the J&J/Janssen COVID-19 vaccine (such as polysorbate), you should not get the  COVID-19 vaccine.
+          </Text>
+              <Text>  -An allergic reaction is considered severe when a person needs to be treated with epinephrine or EpiPen© or if they must go to the hospital. Experts refer to severe allergic reactions as anaphylaxis.</Text>
+              <Text>
+                An immediate allergic reaction means a reaction within 4 hours of getting vaccinated, including symptoms such as hives, swelling, or wheezing (respiratory distress).
+          </Text>
+              <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                <Image
+                  style={{ width: 150, height: 150 }}
+                  source={require('../assets/vaccine_information.png')}
+                />
+              </View>
+            </View>
+          )
         }}
       >
         <Text style={styles.buttonText}>AstraZeneca</Text>
       </TouchableOpacity>
-      <Modal
+      {/* <Modal
         animationType={"slide"}
         transparent={false}
         visible={modalVisible}
@@ -157,47 +179,49 @@ const VaccineDescriptionScreen = (props) => {
           Alert.alert("Modal has now been closed.");
         }}
       >
-        <Text style={styles.text}>Name: NJ-78436735</Text>
-          
-          <Text> Manufacturer: Janssen Pharmaceuticals Companies of Johnson & Johnson</Text>
-
-           <Text>Type of Vaccine: viral vector</Text>
-
-           <Text>Number of Shots: 1 shots</Text>
-
-           <Text>Who Should Get Vaccinated</Text>
-
-           <Text>
-The J&J/Janssen vaccine is recommended for people aged 18 years and older.
-</Text>
-           <Text>Who Should NOT Get Vaccinated/n</Text>
-           <Text>
-If you have had a severe allergic reaction (anaphylaxis) or an immediate allergic reaction—even if it was not severe—to any ingredientexternal icon in the J&J/Janssen COVID-19 vaccine (such as polysorbate), you should not get the J&J/Janssen COVID-19 vaccine.
-</Text>
-<Text>  -An allergic reaction is considered severe when a person needs to be treated with epinephrine or EpiPen© or if they must go to the hospital. Experts refer to severe allergic reactions as anaphylaxis.</Text>
-<Text>
-An immediate allergic reaction means a reaction within 4 hours of getting vaccinated, including symptoms such as hives, swelling, or wheezing (respiratory distress).
-</Text>
-
-        <Text
-          style={styles.closeText}
-          onPress={() => {
-            setModalVisible(!modalVisible);
-          }}
-        >
-          Close Modal
-        </Text>
-      </Modal>
+       
+      </Modal> */}
 
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
           setModalVisible(!modalVisible);
+          setModalChild(
+            <View>
+              <Text style={styles.text}>Name: NJ-78436735</Text>
+
+              <Text> Manufacturer: Janssen Pharmaceuticals Companies of Johnson & Johnson</Text>
+
+              <Text>Type of Vaccine: viral vector</Text>
+
+              <Text>Number of Shots: 1 shots</Text>
+
+              <Text>Who Should Get Vaccinated</Text>
+
+              <Text>
+                The J&J/Janssen vaccine is recommended for people aged 18 years and older.
+</Text>
+              <Text>Who Should NOT Get Vaccinated/n</Text>
+              <Text>
+                If you have had a severe allergic reaction (anaphylaxis) or an immediate allergic reaction—even if it was not severe—to any ingredientexternal icon in the J&J/Janssen COVID-19 vaccine (such as polysorbate), you should not get the J&J/Janssen COVID-19 vaccine.
+</Text>
+              <Text>  -An allergic reaction is considered severe when a person needs to be treated with epinephrine or EpiPen© or if they must go to the hospital. Experts refer to severe allergic reactions as anaphylaxis.</Text>
+              <Text>
+                An immediate allergic reaction means a reaction within 4 hours of getting vaccinated, including symptoms such as hives, swelling, or wheezing (respiratory distress).
+</Text>
+              <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                <Image
+                  style={{ width: 150, height: 150 }}
+                  source={require('../assets/vaccine_information.png')}
+                />
+              </View>
+            </View>
+          )
         }}
       >
         <Text style={styles.buttonText}>Janssen</Text>
       </TouchableOpacity>
-    </View>
+    </View >
   );
 };
 /*
