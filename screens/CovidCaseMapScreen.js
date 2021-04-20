@@ -6,14 +6,19 @@ import {
   Text,
   StyleSheet,
   Linking,
+  ActivityIndicator,
 } from "react-native";
 import Map from "../components/Map";
+import SearchInput, { createFilter } from "react-native-search-filter";
 import { COUNTIES } from "../data/questionnaire-data";
 import Card from "../components/Card";
 import { SearchBar } from "react-native-elements";
+const KEYS_TO_FILTERS = ["user.name", "subject"];
 
 const CovidCaseMapScreen = (props) => {
   const [value, setValue] = React.useState("");
+  //const state;
+
   const renderGridItem = (itemData) => {
     return (
       <TouchableOpacity style={styles.gridItem}>
@@ -31,16 +36,14 @@ const CovidCaseMapScreen = (props) => {
       </TouchableOpacity>
     );
   };
+
   return (
     <View style={styles.screen}>
       <SearchBar
         platform="default"
-        onChangeText={(newVal) => setValue(newVal)}
-        onClearText={() => console.log(onClearText())}
+        onChangeText={(text) => setValue(text)}
         placeholder="Search County here..."
         placeholderTextColor="#888"
-        cancelButtonTitle="Cancel"
-        onCancel={() => console.log(onCancel())}
         value={value}
       />
       <View>
