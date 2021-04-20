@@ -35,7 +35,6 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Login",
       headerTintColor: "maroon",
-
       headerRight: () => <Icon name="home" color="maroon" />,
     },
   },
@@ -44,7 +43,6 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Create Account",
       headerTintColor: "maroon",
-      headerLeft: () => <Icon name="menu" />,
       headerRight: () => <Icon name="home" color="maroon" />,
     },
   },
@@ -53,7 +51,6 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Forgot Password",
       headerTintColor: "maroon",
-      headerLeft: () => <Icon name="menu" />,
       headerRight: () => <Icon name="home" color="maroon" />,
     },
   },
@@ -62,7 +59,6 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Covid Info",
       headerTintColor: "maroon",
-      headerLeft: () => <Icon name="menu" />,
       headerRight: () => <Icon name="home" color="maroon" />,
     },
   },
@@ -71,7 +67,6 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Covid Questionnaire",
       headerTintColor: "maroon",
-      headerLeft: () => <Icon name="menu" />,
       headerRight: () => <Icon name="home" color="maroon" />,
     },
   },
@@ -80,7 +75,7 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Covid Case Map",
       headerTintColor: "maroon",
-      headerLeft: () => <Icon name="menu" />,
+      headerRight: () => <Icon name="home" color="maroon" />,
     },
   },
   CovidDescription: {
@@ -88,7 +83,7 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Covid Description",
       headerTintColor: "maroon",
-      headerLeft: () => <Icon name="menu" />,
+      headerRight: () => <Icon name="home" color="maroon" />,
     },
   },
   VaccineInfo: {
@@ -96,7 +91,7 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Vaccine Info",
       headerTintColor: "maroon",
-      headerLeft: () => <Icon name="menu" />,
+      headerRight: () => <Icon name="home" color="maroon" />,
     },
   },
   VaccineQuestionnaire: {
@@ -104,7 +99,7 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Vaccine Questionnaire",
       headerTintColor: "maroon",
-      headerLeft: () => <Icon name="menu" />,
+      headerRight: () => <Icon name="home" color="maroon" />,
     },
   },
   VaccineScheduler: {
@@ -112,7 +107,7 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Vaccine SCheduler",
       headerTintColor: "maroon",
-      headerLeft: () => <Icon name="menu" />,
+      headerRight: () => <Icon name="home" color="maroon" />,
     },
   },
   VaccineAdvice: {
@@ -120,7 +115,7 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Vaccine Advice Screen",
       headerTintColor: "maroon",
-      headerLeft: () => <Icon name="menu" />,
+      headerRight: () => <Icon name="home" color="maroon" />,
     },
   },
   VaccineDescription: {
@@ -128,7 +123,7 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Vaccine Description Screen",
       headerTintColor: "maroon",
-      headerLeft: () => <Icon name="menu" />,
+      headerRight: () => <Icon name="home" color="maroon" />,
     },
   },
   VaccineDistributionMap: {
@@ -136,7 +131,7 @@ const CovidNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Vaccine Distribution Map",
       headerTintColor: "maroon",
-      headerLeft: () => <Icon name="menu" />,
+      headerRight: () => <Icon name="home" color="maroon" />,
     },
   },
 });
